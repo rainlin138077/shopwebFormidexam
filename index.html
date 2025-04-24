@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>優選商城 - 您的線上購物首選</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- 引入Font Awesome圖標 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- 頂部搜尋欄 -->
+    <div class="top-bar">
+        <button class="theme-toggle" aria-label="切換光暗模式">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="search-container">
+            <input type="text" placeholder="搜尋商品..." class="search-input">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="user-actions">
+            <a href="login.html" class="user-icon"><i class="fas fa-user"></i></a>
+            <a href="cart.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 主內容區 -->
+    <div class="main-container">
+        <!-- 左側伸縮式菜單 -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>商品分類</h3>
+                <button class="toggle-sidebar" aria-label="收合分類">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#"><i class="fas fa-mobile-alt"></i> <span class="menu-text">電子產品</span></a></li>
+                <li><a href="#"><i class="fas fa-tshirt"></i> <span class="menu-text">服飾配件</span></a></li>
+                <li><a href="#"><i class="fas fa-home"></i> <span class="menu-text">家居生活</span></a></li>
+                <li><a href="#"><i class="fas fa-book"></i> <span class="menu-text">書籍文創</span></a></li>
+                <li><a href="#"><i class="fas fa-utensils"></i> <span class="menu-text">食品飲料</span></a></li>
+                <li><a href="#"><i class="fas fa-gamepad"></i> <span class="menu-text">玩具遊戲</span></a></li>
+                <li><a href="#"><i class="fas fa-percent"></i> <span class="menu-text">特價專區</span></a></li>
+                <li><a href="#"><i class="fas fa-gift"></i> <span class="menu-text">新品上架</span></a></li>
+            </ul>
+        </nav>
+    
+        <!-- 主要內容區域 -->
+        <main class="content-area">
+            <!-- 近期活動圖片輪播 -->
+            <section class="promo-banner">
+                <div class="banner-slide active">
+                    <img src="images/promo1.jpg" alt="夏季特賣會">
+                    <div class="banner-text">
+                        <h2>夏季特賣會</h2>
+                        <p>全館商品5折起，限時優惠</p>
+                        <button class="banner-button">立即選購</button>
+                    </div>
+                </div>
+                <div class="banner-slide">
+                    <img src="images/promo2.jpg" alt="新品上市">
+                    <div class="banner-text">
+                        <h2>新品上市</h2>
+                        <p>最新科技產品搶先體驗</p>
+                        <button class="banner-button">查看詳情</button>
+                    </div>
+                </div>
+                <div class="banner-controls">
+                    <button class="prev-banner"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-banner"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="banner-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                </div>
+            </section>
+
+            <!-- 文字版內容區 -->
+            <section class="text-content">
+                <h2>關於我們</h2>
+                <p>優選商城成立於2010年，致力於為消費者提供最優質的商品和最便捷的購物體驗。我們嚴選各類商品，從電子產品到生活用品，確保每一件商品都符合高品質標準。</p>
+                
+                <h2>服務承諾</h2>
+                <ul>
+                    <li>正品保證：所有商品均為正品，假一賠十</li>
+                    <li>快速配送：全台24小時到貨，偏遠地區48小時</li>
+                    <li>七天鑑賞：收到商品七天內可無條件退換貨</li>
+                    <li>專業客服：24小時在線客服，隨時解答您的疑問</li>
+                </ul>
+                
+                <h2>最新公告</h2>
+                <div class="announcement">
+                    <h3>系統維護通知</h3>
+                    <p class="date">2023年6月15日</p>
+                    <p>為了提供更好的服務，我們將於6月20日凌晨2:00-4:00進行系統維護，期間網站將暫時無法訪問，敬請見諒。</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>客戶服務</h3>
+                <ul>
+                    <li><a href="#">聯絡我們</a></li>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">退換貨政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>關於我們</h3>
+                <ul>
+                    <li><a href="#">公司簡介</a></li>
+                    <li><a href="#">門市資訊</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>關注我們</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 優選商城 版權所有
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
