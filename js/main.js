@@ -210,3 +210,113 @@ function addToCart(productId, quantity = 1, options = {}) {
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
 }
+
+// 在 DOMContentLoaded 事件監聽器內添加以下代碼
+
+// 商品篩選功能
+const categoryFilter = document.getElementById('category-filter');
+const sortBy = document.getElementById('sort-by');
+const productGrid = document.querySelector('.product-grid');
+
+if (categoryFilter && sortBy && productGrid) {
+    // 篩選商品
+    categoryFilter.addEventListener('change', filterAndSortProducts);
+    sortBy.addEventListener('change', filterAndSortProducts);
+    
+    function filterAndSortProducts() {
+        const selectedCategory = categoryFilter.value;
+        const sortMethod = sortBy.value;
+        const products = Array.from(document.querySelectorAll('.product-card'));
+        
+        // 篩選
+        let filteredProducts = products;
+        if (selectedCategory !== 'all') {
+            filteredProducts = products.filter(product => 
+                product.dataset.category === selectedCategory
+            );
+        }
+        
+        // 排序
+        filteredProducts.sort((a, b) => {
+            switch(sortMethod) {
+                case 'price-low':
+                    return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
+                case 'price-high':
+                    return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
+                case 'newest':
+                    return new Date(b.dataset.date) - new Date(a.dataset.date);
+                default: // popular (默認)
+                    return 0; // 保持原始順序
+            }
+        });
+        
+        // 重新排列商品
+        productGrid.innerHTML = '';
+        filteredProducts.forEach(product => {
+            productGrid.appendChild(product);
+        });
+    }
+}
+
+// 加入購物車功能
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('add-to-cart')) {
+        const productCard = e.target.closest('.product-card');
+        const productName = productCard.querySelector('.product-title').textContent;
+        const productPrice = productCard.querySelector('.current-price').textContent;
+        
+        // 更新購物車數量
+        const cartCount = document.querySelector('.cart-count');
+        if (cartCount) {
+            let count = parseInt(cartCount.textContent) || 0;
+            cartCount.textContent = count + 1;
+            cartCount.classList.add('pulse');
+            setTimeout(() => cartCount.classList.remove('pulse'), 500);
+        }
+        
+        // 顯示添加成功通知
+        showToast(`${productName} 已加入購物車`);
+    }
+    
+    // 加入願望清單
+    if (e.target.classList.contains('add-to-wishlist') || 
+        e.target.closest('.add-to-wishlist')) {
+        const btn = e.target.classList.contains('add-to-wishlist') ? 
+                e.target : e.target.closest('.add-to-wishlist');
+        btn.classList.toggle('active');
+        btn.querySelector('i').classList.toggle('far');
+        btn.querySelector('i').classList.toggle('fas');
+        
+        const productName = btn.closest('.product-card').querySelector('.product-title').textContent;
+        const action = btn.classList.contains('active') ? '加入' : '移除';
+        showToast(`${productName} 已${action}願望清單`);
+    }
+});
+
+// 顯示通知
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 10);
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
+// 分頁按鈕功能
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('page-btn') && !e.target.classList.contains('active')) {
+        document.querySelectorAll('.page-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        // 這裡可以添加加載相應頁面商品的AJAX請求
+    }
+});
