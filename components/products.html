@@ -1,0 +1,130 @@
+<!-- 購買特區 -->
+<section class="shopping-section">
+    <div class="section-header">
+        <h2>熱銷商品</h2>
+        <div class="view-all">
+            <a href="./products.html">查看全部 <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+    
+    <div class="product-filters">
+        <div class="filter-group">
+            <label for="category-filter">分類：</label>
+            <select id="category-filter" class="filter-select">
+                <option value="all">全部商品</option>
+                <option value="electronics">電子產品</option>
+                <option value="fashion">服飾配件</option>
+                <option value="home">家居生活</option>
+                <option value="food">食品飲料</option>
+            </select>
+        </div>
+        <section id="electronics">
+            <h2>電子產品</h2>
+            <p>我們提供多樣化的電子產品，包括智慧型手機、平板電腦、筆記型電腦、藍牙耳機與家用電器等，滿足您在工作、娛樂與生活上的各種需求。
+                無論是追求高效能的玩家，還是重視性價比的日常使用者，都能在這裡找到適合自己的選擇。
+                我們精選各大品牌產品，提供安心保固與完善售後服務，讓您購物無後顧之憂。</p>
+        </section>
+
+        <section id="fashion">
+            <h2>服飾配件</h2>
+            <p>我們精選時下流行的男女服飾與多樣配件，從日常休閒到正式穿搭應有盡有。
+                商品涵蓋上衣、褲子、洋裝、帽子、背包、鞋款及飾品等，滿足不同年齡層與風格的需求。
+                無論您喜歡簡約風、街頭風還是韓系時尚，皆可輕鬆打造出屬於自己的穿搭風格。我們也不定期與設計師合作，推出限量時尚單品。</p>
+        </section>
+
+        <section id="home">
+            <h2>家居生活</h2>
+            <p>打造舒適居家生活從這裡開始！我們提供多種實用又具美感的家居用品，包括收納工具、床寢用品、廚房設備與居家裝飾等。
+                從空間收納到生活美學，每一件商品都經過嚴選，提升您的生活品質與幸福感。
+                無論您是新搬家、想改造空間，還是想送禮給親友，都能在此找到合適的選擇。</p>
+        </section>
+
+        <section id="sale">
+            <h2>特價專區</h2>
+            <p>限時優惠，絕不容錯過！本專區精選多樣商品提供超值折扣，從電子用品、服飾配件到居家必備，樣樣精采，數量有限售完為止。
+                每日更新限時活動與爆品推薦，讓您以最優惠的價格享受高品質商品。我們堅持不打折服務品質，讓您用實惠價格也能享受頂級購物體驗。</p>
+        </section>
+        <div class="filter-group">
+            <label for="sort-by">排序：</label>
+            <select id="sort-by" class="filter-select">
+                <option value="popular">人氣推薦</option>
+                <option value="newest">最新上架</option>
+                <option value="price-low">價格從低到高</option>
+                <option value="price-high">價格從高到低</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="product-grid">
+        <!-- 商品卡片1 -->
+        <div class="product-card" data-category="electronics" data-price="12990" data-date="2023-07-15" data-id="1">
+            <div class="product-badge hot">熱賣</div>
+            <div class="product-image">
+                <img src="imgs/products/phone.jpg" alt="旗艦智慧手機">
+                <button class="quick-view">快速預覽</button>
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">旗艦智慧手機</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-count">(128)</span>
+                </div>
+                <div class="product-price">
+                    <span class="current-price">NT$12,990</span>
+                    <span class="original-price">NT$15,990</span>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-wishlist" aria-label="加入願望清單">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 商品卡片2 -->
+        <div class="product-card" data-category="fashion" data-price="890" data-date="2023-08-01" data-id="2">
+            <div class="product-badge new">新品</div>
+            <div class="product-image">
+                <img src="imgs/products/shirt.jpg" alt="純棉休閒襯衫">
+                <button class="quick-view">快速預覽</button>
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">純棉休閒襯衫</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span class="rating-count">(64)</span>
+                </div>
+                <div class="product-price">
+                    <span class="current-price">NT$890</span>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-wishlist" aria-label="加入願望清單">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 更多商品卡片... -->
+    </div>
+    
+    <div class="pagination">
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <span class="page-dots">...</span>
+        <button class="page-btn">5</button>
+        <button class="next-btn">下一頁 <i class="fas fa-chevron-right"></i></button>
+    </div>
+</section>
+

@@ -1,0 +1,40 @@
+/* 文字內容區 */
+.text-content {
+    padding: 1rem 0;
+}
+
+.text-content h2 {
+    margin: 1.5rem 0 1rem;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.text-content p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.text-content ul {
+    margin: 1rem 0 1rem 2rem;
+}
+
+.announcement {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--announcement-bg);
+    border-radius: 4px;
+}
+
+.announcement h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.announcement .date {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}

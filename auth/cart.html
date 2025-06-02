@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車 - 優選商城</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components/auth.css">
+    <link rel="stylesheet" href="../css/components/cart.css">
+    <link rel="stylesheet" href="../css/components/header.css">
+    <link rel="stylesheet" href="../css/components/toast.css">
+    <link rel="stylesheet" href="../css/components/products.css">
+
+    <!-- 引入Font Awesome圖標 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- 頂部導航欄 -->
+    <div class="top-bar">
+        <button class="theme-toggle" aria-label="切換光暗模式">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="logo">
+            <a href="../index.html">優選商城</a>
+        </div>
+        <div class="user-actions">
+            <a href="login.html" class="user-icon"><i class="fas fa-user"></i></a>
+            <a href="cart.html" class="cart-icon active">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">3</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 主內容區 -->
+    <main class="cart-container">
+        <h1 class="cart-title">您的購物車</h1>
+        
+        <div class="cart-content">
+            <!-- 購物車商品列表 -->
+            <div class="cart-items">
+                <div class="cart-header">
+                    <div class="header-item product-info">商品資訊</div>
+                    <div class="header-item price">單價</div>
+                    <div class="header-item quantity">數量</div>
+                    <div class="header-item subtotal">小計</div>
+                    <div class="header-item action">操作</div>
+                </div>
+                
+                <!-- 商品項目 1 -->
+                <div class="cart-item">
+                    <div class="item-info">
+                        <img src="images/product1.jpg" alt="無線藍牙耳機" class="product-image">
+                        <div class="product-details">
+                            <h3>無線藍牙耳機 Pro</h3>
+                            <p>顏色: 黑色 | 保固: 1年</p>
+                        </div>
+                    </div>
+                    <div class="item-price">NT$1,299</div>
+                    <div class="item-quantity">
+                        <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="item-subtotal">NT$1,299</div>
+                    <div class="item-action">
+                        <button class="remove-btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                
+                <!-- 商品項目 2 -->
+                <div class="cart-item">
+                    <div class="item-info">
+                        <img src="images/product2.jpg" alt="智能手錶" class="product-image">
+                        <div class="product-details">
+                            <h3>智能手錶 X3</h3>
+                            <p>顏色: 銀色 | 尺寸: M</p>
+                        </div>
+                    </div>
+                    <div class="item-price">NT$3,599</div>
+                    <div class="item-quantity">
+                        <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="number" value="2" min="1" class="quantity-input">
+                        <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="item-subtotal">NT$7,198</div>
+                    <div class="item-action">
+                        <button class="remove-btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 購物車摘要 -->
+            <div class="cart-summary">
+                <h3>訂單摘要</h3>
+                <div class="summary-row">
+                    <span>商品總計 (3件)</span>
+                    <span>NT$8,497</span>
+                </div>
+                <div class="summary-row">
+                    <span>運費</span>
+                    <span>NT$60</span>
+                </div>
+                <div class="summary-row discount">
+                    <span>優惠折扣</span>
+                    <span>-NT$300</span>
+                </div>
+                <div class="summary-row total">
+                    <span>總金額</span>
+                    <span>NT$8,257</span>
+                </div>
+                <button class="checkout-btn">前往結帳</button>
+                <div class="continue-shopping">
+                    <a href="index.html"><i class="fas fa-arrow-left"></i> 繼續購物</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 推薦商品 -->
+        <div class="recommendations">
+            <h3>您可能也喜歡</h3>
+            <div class="recommendation-items">
+                <div class="product-card">
+                    <img src="images/recommend1.jpg" alt="手機保護殼">
+                    <h4>防摔手機保護殼</h4>
+                    <p class="price">NT$390</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/recommend2.jpg" alt="無線充電器">
+                    <h4>快充無線充電器</h4>
+                    <p class="price">NT$699</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>客戶服務</h3>
+                <ul>
+                    <li><a href="#">聯絡我們</a></li>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">退換貨政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>關於我們</h3>
+                <ul>
+                    <li><a href="#">公司簡介</a></li>
+                    <li><a href="#">門市資訊</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>關注我們</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 優選商城 版權所有
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

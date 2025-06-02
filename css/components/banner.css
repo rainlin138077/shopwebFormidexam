@@ -1,0 +1,145 @@
+/* 活動圖片輪播 */
+.promo-banner {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.banner-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.banner-slide.active {
+    opacity: 1;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*亮色模式*/
+.banner-text {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    color: #000; /* 預設黑色文字（亮色模式） */
+    text-shadow: none; /* 移除文字陰影（可選） */   
+    max-width: 50%;
+}
+
+/* 暗色模式下的文字顏色 */
+.dark-mode .banner-text {
+    color: #fff; /* 白色文字（暗色模式） */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5); /* 暗色模式保留陰影增強可讀性 */
+}
+
+.dark-mode .banner-text h2,
+.dark-mode .banner-text p {
+    color: #ffffff; /* 白色文字 */
+}
+
+/* 夏季特賣會：白色系 */
+.summer-sale .banner-text h2,
+.summer-sale .banner-text p {
+    color: #000000; /* 黑色文字 */
+}
+
+/* 新品上市：藍黑色系 */
+.new-arrival .banner-text h2,
+.new-arrival .banner-text p {
+    color: #ffffff; /* 白色文字 */
+    text-shadow: 1px 1px 5px rgba(0,0,0,1.0); /* 暗色模式保留陰影增強可讀性 */
+}
+
+.banner-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.banner-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.banner-button {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.banner-button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+.banner-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.banner-controls button {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+}
+
+.banner-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: white;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .promo-banner {
+        height: 300px;
+    }
+    
+    .banner-text {
+        max-width: 80%;
+    }
+    
+    .banner-text h2 {
+        font-size: 1.8rem;
+    }
+}
